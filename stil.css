@@ -49,6 +49,11 @@ a:hover { color: var(--akzent); }
 .navi a:hover { color: var(--tinte); }
 .partnerleiste { margin: 0; padding: .4rem 1rem; text-align: center; font-size: .8rem; color: var(--leise); background: var(--akzent-sanft); }
 .partnerleiste a { color: inherit; }
+.sprachen { display: flex; gap: .35rem; align-items: center; font-size: .85rem; color: var(--leise); }
+.sprachen a { color: var(--leise); text-decoration: none; padding: .1rem .3rem; border-radius: 6px; }
+.sprachen a:hover { color: var(--tinte); }
+.sprachen a[aria-current] { color: var(--tinte); font-weight: 700; }
+.entwurf { margin: 0; padding: .55rem 1rem; text-align: center; font-weight: 700; font-size: .9rem; color: #fff; background: #9b2c2c; }
 
 main { padding: 0 1rem 4rem; }
 h1, h2, h3 { font-family: var(--serif); line-height: 1.2; letter-spacing: -.01em; }
@@ -150,3 +155,18 @@ tbody th a { color: var(--tinte); }
   .schnellwahl .knopf { grid-column: 1; grid-row: auto; justify-self: start; margin-top: .4rem; }
   .knopf { white-space: normal; }
 }
+
+/* Titelbilder (KI-Symbolbilder, 3:2) */
+.artikel__bild { margin: 0 0 1.5rem; }
+.artikel__bild img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--rund); box-shadow: var(--schatten); }
+.artikel__bild figcaption { margin-top: .35rem; font-size: .75rem; color: var(--leise); text-align: right; }
+.kachel a { padding-top: 0; overflow: hidden; }
+.kachel__bild { display: block; margin: 0 -1.4rem .6rem; }
+.kachel a:not(:has(.kachel__bild)) { padding-top: 1.3rem; }
+.kachel__bild img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; transition: transform .4s ease; }
+.kachel a:hover .kachel__bild img { transform: scale(1.03); }
+.buehne__bild { max-width: 72rem; margin: 1.5rem auto 0; }
+.buehne__bild img { display: block; width: 100%; height: auto; aspect-ratio: 21 / 9; object-fit: cover; object-position: center 60%; border-radius: var(--rund); }
+.buehne__bild + .buehne { padding-top: 2rem; }
+@media (max-width: 44rem) { .buehne__bild { margin: 0 -1rem; } .buehne__bild img { border-radius: 0; aspect-ratio: 16 / 10; } }
+@media (prefers-reduced-motion: reduce) { .kachel__bild img { transition: none; } }
